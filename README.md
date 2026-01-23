@@ -19,7 +19,7 @@ Open-source hybrid (rule-based + ML) security risk analysis system for session d
 - **Production-Ready**: Modular, tested, documented code
 - **Open Source**: Licensed under MIT
 
-## 🏗️ Mimari
+## 🏗️ Architecture
 
 ```
 Session Data
@@ -35,7 +35,7 @@ Session Data
 Risk Analysis Result
 ```
 
-### Bileşenler
+### Components
 
 1. **Feature Extractor**: Converts session data into 25 features
    - IP change metrics
@@ -64,7 +64,7 @@ Risk Analysis Result
    - Final riskScore (0-100)
    - Risk array generation
 
-## 📦 Kurulum
+## 📦 Installation
 
 ### Requirements
 
@@ -92,9 +92,9 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-## 🚀 Kullanım
+## 🚀 Usage
 
-### Temel Kullanım
+### Basic Usage
 
 ```python
 from onuion import analyze_risk
@@ -122,7 +122,7 @@ session_data = {
     "initial_referrer": ""
 }
 
-# Risk analizi
+# Risk analysis
 result = analyze_risk(session_data)
 
 # Results
@@ -131,7 +131,7 @@ print(f"Risks: {result.risk}")
 print(f"Inference Time: {result.inference_time_ms:.3f} ms")
 ```
 
-### Çıktı Formatı
+### Output Format
 
 ```python
 {
