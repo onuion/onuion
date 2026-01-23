@@ -1,0 +1,67 @@
+{
+  "current_ip": "192.168.1.100",
+  "initial_ip": "192.168.1.50",
+  "ip_history": ["192.168.1.50", "192.168.1.75", "192.168.1.100"],
+  "current_geo": {
+    "country": "TR",
+    "city": "Istanbul",
+    "timezone": "Europe/Istanbul"
+  },
+  "initial_geo": {
+    "country": "TR",
+    "city": "Ankara",
+    "timezone": "Europe/Istanbul"
+  },
+  "current_device": {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "screen_resolution": "1920x1080",
+    "platform": "Win32",
+    "fingerprint": "abc123def456"
+  },
+  "initial_device": {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "screen_resolution": "1920x1080",
+    "platform": "Win32",
+    "fingerprint": "abc123def456"
+  },
+  "current_browser": {
+    "name": "Chrome",
+    "version": "120.0",
+    "language": "tr-TR"
+  },
+  "initial_browser": {
+    "name": "Chrome",
+    "version": "120.0",
+    "language": "tr-TR"
+  },
+  "requests": [
+    {
+      "timestamp": 1706000000,
+      "method": "GET",
+      "endpoint": "/api/users"
+    },
+    {
+      "timestamp": 1706000005,
+      "method": "POST",
+      "endpoint": "/api/login"
+    },
+    {
+      "timestamp": 1706000010,
+      "method": "GET",
+      "endpoint": "/api/dashboard"
+    }
+  ],
+  "session_duration_seconds": 10.0,
+  "current_session_id": "sess_abc123",
+  "initial_session_id": "sess_abc123",
+  "current_cookies": {
+    "session_id": "sess_abc123",
+    "csrf_token": "token_xyz"
+  },
+  "initial_cookies": {
+    "session_id": "sess_abc123"
+  },
+  "current_referrer": "https://example.com",
+  "initial_referrer": "https://example.com"
+}
+
