@@ -76,7 +76,7 @@ Risk Analysis Result
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/onuion.git
+git clone https://github.com/onuion/onuion.git
 cd onuion
 
 # Create virtual environment (recommended)

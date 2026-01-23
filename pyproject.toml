@@ -41,10 +41,10 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/onuion"
-Documentation = "https://github.com/yourusername/onuion/docs"
-Repository = "https://github.com/yourusername/onuion"
-Issues = "https://github.com/yourusername/onuion/issues"
+Homepage = "https://github.com/onuion/onuion"
+Documentation = "https://github.com/onuion/onuion/docs"
+Repository = "https://github.com/onuion/onuion"
+Issues = "https://github.com/onuion/onuion/issues"
 
 [tool.setuptools]
 packages = ["onuion"]
