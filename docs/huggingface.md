@@ -35,7 +35,7 @@ from onuion.huggingface import upload_to_hub
 
 upload_to_hub(
     model_path="models/onuion_model",
-    repo_id="onuion/onuion-model",
+    repo_id="onuion/onuion",
     token=None,  # Uses cached token if not provided
     private=False
 )
@@ -57,7 +57,7 @@ model = RiskModel(input_dim=25)
 hf = HuggingFaceIntegration()
 repo_url = hf.upload_model(
     model=model,
-    repo_id="onuion/onuion-model",
+    repo_id="onuion/onuion",
     token=None,
     private=False,
     commit_message="Upload trained onuion model"
@@ -74,7 +74,7 @@ from onuion import analyze_risk
 
 # Download model
 model = download_from_hub(
-    repo_id="onuion/onuion-model",
+    repo_id="onuion/onuion",
     local_dir="models/downloaded_model",
     token=None  # Required only for private repos
 )

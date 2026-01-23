@@ -49,7 +49,7 @@ class HuggingFaceIntegration:
         
         Args:
             model: RiskModel instance to upload
-            repo_id: Repository ID (e.g., "onuion/onuion-model")
+            repo_id: Repository ID (e.g., "onuion/onuion")
             token: Hugging Face token (optional, uses cached token if not provided)
             private: Whether the repository should be private
             commit_message: Commit message for the upload
@@ -101,7 +101,7 @@ class HuggingFaceIntegration:
         Downloads a model from Hugging Face Hub.
         
         Args:
-            repo_id: Repository ID (e.g., "onuion/onuion-model")
+            repo_id: Repository ID (e.g., "onuion/onuion")
             local_dir: Local directory to save the model (optional)
             token: Hugging Face token (optional)
             
@@ -161,7 +161,7 @@ from onuion import analyze_risk
 
 # Download model
 hf = HuggingFaceIntegration()
-model = hf.download_model("onuion/onuion-model")
+model = hf.download_model("onuion/onuion")
 
 # Use with inference
 result = analyze_risk(session_data, model_path="path/to/model")
@@ -210,7 +210,7 @@ def upload_to_hub(
     
     Args:
         model_path: Path to saved model directory
-        repo_id: Repository ID (e.g., "onuion/onuion-model")
+        repo_id: Repository ID (e.g., "onuion/onuion")
         token: Hugging Face token (optional)
         private: Whether the repository should be private
         
@@ -240,7 +240,7 @@ def download_from_hub(
     Convenience function to download a model from Hugging Face Hub.
     
     Args:
-        repo_id: Repository ID (e.g., "onuion/onuion-model")
+        repo_id: Repository ID (e.g., "onuion/onuion")
         local_dir: Local directory to save the model (optional)
         token: Hugging Face token (optional)
         

@@ -11,8 +11,8 @@ from onuion import analyze_risk
 def download_and_use():
     """Download a model from Hugging Face and use it for inference."""
     
-    # Repository ID (e.g., "onuion/onuion-model")
-    repo_id = "onuion/onuion-model"
+    # Repository ID (e.g., "onuion/onuion")
+    repo_id = "onuion/onuion"
     
     # Optional: specify local directory to save model
     local_dir = "models/downloaded_model"

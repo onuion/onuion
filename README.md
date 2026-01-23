@@ -181,7 +181,7 @@ from onuion.huggingface import upload_to_hub
 # Upload a saved model
 upload_to_hub(
     model_path="models/onuion_model",
-    repo_id="onuion/onuion-model",
+    repo_id="onuion/onuion",
     token="your_hf_token",  # Optional, can use huggingface-cli login
     private=False
 )
@@ -195,7 +195,7 @@ from onuion import analyze_risk
 
 # Download model
 model = download_from_hub(
-    repo_id="onuion/onuion-model",
+    repo_id="onuion/onuion",
     local_dir="models/downloaded_model"
 )
 

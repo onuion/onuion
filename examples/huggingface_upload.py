@@ -16,7 +16,7 @@ def upload_saved_model():
     # Get token from environment or Hugging Face CLI
     token = os.getenv("HF_TOKEN")  # Or use: huggingface-cli login
     
-    repo_id = "onuion/onuion-model"  # Hugging Face repository ID
+    repo_id = "onuion/onuion"  # Hugging Face repository ID
     
     print(f"Uploading model from {model_path} to {repo_id}...")
     repo_url = upload_to_hub(
@@ -40,7 +40,7 @@ def upload_model_instance():
     # Upload
     hf = HuggingFaceIntegration()
     token = os.getenv("HF_TOKEN")
-    repo_id = "onuion/onuion-model"
+    repo_id = "onuion/onuion
     
     print(f"Uploading model to {repo_id}...")
     repo_url = hf.upload_model(
@@ -68,5 +68,5 @@ if __name__ == "__main__":
     print("Make sure to:")
     print("1. Train your model first")
     print("2. Login to Hugging Face: huggingface-cli login")
-    print("3. Update repo_id if needed (default: onuion/onuion-model)")
+    print("3. Update repo_id if needed (default: onuion/onuion)")
 
