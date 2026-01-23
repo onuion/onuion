@@ -11,9 +11,24 @@ __author__ = "onuion contributors"
 from onuion.inference import analyze_risk, RiskAnalysisResult
 from onuion.model import RiskModel
 
-__all__ = [
-    "analyze_risk",
-    "RiskAnalysisResult",
-    "RiskModel",
-]
-
+# Optional Hugging Face integration
+try:
+    from onuion.huggingface import (
+        HuggingFaceIntegration,
+        upload_to_hub,
+        download_from_hub
+    )
+    __all__ = [
+        "analyze_risk",
+        "RiskAnalysisResult",
+        "RiskModel",
+        "HuggingFaceIntegration",
+        "upload_to_hub",
+        "download_from_hub",
+    ]
+except ImportError:
+    __all__ = [
+        "analyze_risk",
+        "RiskAnalysisResult",
+        "RiskModel",
+    ]

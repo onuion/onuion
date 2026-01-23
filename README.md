@@ -169,6 +169,49 @@ python -m onuion.train --synthetic --epochs 50 --output-dir models/onuion_model
 python -m onuion.train --data-path data/training_data.npz --epochs 100
 ```
 
+### Hugging Face Integration
+
+onuion supports Hugging Face Hub for model sharing and deployment.
+
+**Upload a model to Hugging Face Hub:**
+
+```python
+from onuion.huggingface import upload_to_hub
+
+# Upload a saved model
+upload_to_hub(
+    model_path="models/onuion_model",
+    repo_id="onuion/onuion-model",
+    token="your_hf_token",  # Optional, can use huggingface-cli login
+    private=False
+)
+```
+
+**Download a model from Hugging Face Hub:**
+
+```python
+from onuion.huggingface import download_from_hub
+from onuion import analyze_risk
+
+# Download model
+model = download_from_hub(
+    repo_id="onuion/onuion-model",
+    local_dir="models/downloaded_model"
+)
+
+# Use with inference
+model.save("models/downloaded_model")
+result = analyze_risk(session_data, model_path="models/downloaded_model")
+```
+
+**Install Hugging Face dependencies:**
+
+```bash
+pip install huggingface_hub
+```
+
+See `examples/huggingface_upload.py` and `examples/huggingface_download.py` for complete examples.
+
 ## 📊 Performance
 
 ### Inference Time

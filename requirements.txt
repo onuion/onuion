@@ -2,6 +2,9 @@
 numpy>=1.21.0
 tensorflow>=2.10.0
 
+# Hugging Face integration (optional)
+# huggingface_hub>=0.16.0
+
 # Development dependencies (optional)
 # pytest>=7.0.0
 # pytest-cov>=4.0.0
