@@ -9,7 +9,7 @@ from onuion.inference import InferencePipeline, analyze_risk
 def test_inference_pipeline_basic():
     """Temel inference testi."""
     pipeline = InferencePipeline()
-    
+
     session_data = {
         "current_ip": "192.168.1.100",
         "initial_ip": "192.168.1.50",
@@ -27,11 +27,11 @@ def test_inference_pipeline_basic():
         "current_cookies": {},
         "initial_cookies": {},
         "current_referrer": "",
-        "initial_referrer": ""
+        "initial_referrer": "",
     }
-    
+
     result = pipeline.analyze(session_data)
-    
+
     assert result.riskScore >= 0
     assert result.riskScore <= 100
     assert isinstance(result.risk, list)
@@ -57,12 +57,11 @@ def test_analyze_risk_function():
         "current_cookies": {},
         "initial_cookies": {},
         "current_referrer": "",
-        "initial_referrer": ""
+        "initial_referrer": "",
     }
-    
+
     result = analyze_risk(session_data)
-    
+
     assert result.riskScore >= 0
     assert result.riskScore <= 100
     assert result.inference_time_ms >= 0
-

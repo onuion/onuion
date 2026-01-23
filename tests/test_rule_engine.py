@@ -9,7 +9,7 @@ from onuion.rule_engine import RuleEngine
 def test_rule_engine_ip_mismatch():
     """IP mismatch kuralı testi."""
     engine = RuleEngine()
-    
+
     session_data = {
         "current_ip": "192.168.1.100",
         "initial_ip": "192.168.1.50",
@@ -27,11 +27,11 @@ def test_rule_engine_ip_mismatch():
         "current_cookies": {},
         "initial_cookies": {},
         "current_referrer": "",
-        "initial_referrer": ""
+        "initial_referrer": "",
     }
-    
+
     result = engine.evaluate(session_data)
-    
+
     assert "ip_mismatch" in result["detected_risks"]
     assert result["risk_score"] > 0
 
@@ -39,7 +39,7 @@ def test_rule_engine_ip_mismatch():
 def test_rule_engine_session_hijacking():
     """Session hijacking kuralı testi."""
     engine = RuleEngine()
-    
+
     session_data = {
         "current_ip": "192.168.1.100",
         "initial_ip": "192.168.1.50",
@@ -57,24 +57,23 @@ def test_rule_engine_session_hijacking():
         "current_cookies": {},
         "initial_cookies": {},
         "current_referrer": "",
-        "initial_referrer": ""
+        "initial_referrer": "",
     }
-    
+
     result = engine.evaluate(session_data)
-    
+
     assert "session_hijacking" in result["detected_risks"]
 
 
 def test_rule_engine_bot_behavior():
     """Bot behavior kuralı testi."""
     engine = RuleEngine()
-    
+
     # Yüksek request rate
     requests = [
-        {"timestamp": i * 0.01, "method": "GET", "endpoint": f"/api/{i}"}
-        for i in range(100)
+        {"timestamp": i * 0.01, "method": "GET", "endpoint": f"/api/{i}"} for i in range(100)
     ]
-    
+
     session_data = {
         "current_ip": "192.168.1.100",
         "initial_ip": "192.168.1.100",
@@ -92,18 +91,18 @@ def test_rule_engine_bot_behavior():
         "current_cookies": {},
         "initial_cookies": {},
         "current_referrer": "",
-        "initial_referrer": ""
+        "initial_referrer": "",
     }
-    
+
     result = engine.evaluate(session_data)
-    
+
     assert "bot_behavior" in result["detected_risks"]
 
 
 def test_rule_engine_no_risk():
     """Risk yok durumu testi."""
     engine = RuleEngine()
-    
+
     session_data = {
         "current_ip": "192.168.1.100",
         "initial_ip": "192.168.1.100",
@@ -121,12 +120,11 @@ def test_rule_engine_no_risk():
         "current_cookies": {},
         "initial_cookies": {},
         "current_referrer": "",
-        "initial_referrer": ""
+        "initial_referrer": "",
     }
-    
+
     result = engine.evaluate(session_data)
-    
+
     # Risk skoru düşük olmalı (ama 0 olmayabilir, ML'e bırakılır)
     assert result["risk_score"] >= 0
     assert result["risk_score"] <= 100
-

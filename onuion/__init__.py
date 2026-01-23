@@ -13,11 +13,8 @@ from onuion.model import RiskModel
 
 # Optional Hugging Face integration
 try:
-    from onuion.huggingface import (
-        HuggingFaceIntegration,
-        upload_to_hub,
-        download_from_hub
-    )
+    from onuion.huggingface import HuggingFaceIntegration, upload_to_hub, download_from_hub
+
     __all__ = [
         "analyze_risk",
         "RiskAnalysisResult",

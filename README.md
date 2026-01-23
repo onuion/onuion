@@ -6,6 +6,7 @@ Open-source hybrid (rule-based + ML) security risk analysis system for session d
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Model%20Hub-yellow)](https://huggingface.co/onuion/onuion)
 
 ## 🎯 Purpose
 
@@ -172,6 +173,8 @@ python -m onuion.train --data-path data/training_data.npz --epochs 100
 ### Hugging Face Integration
 
 onuion supports Hugging Face Hub for model sharing and deployment.
+
+**Model Hub**: [https://huggingface.co/onuion/onuion](https://huggingface.co/onuion/onuion)
 
 **Upload a model to Hugging Face Hub:**
 
