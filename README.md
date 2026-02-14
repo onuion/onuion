@@ -240,6 +240,11 @@ pytest tests/
 pytest tests/ --cov=onuion --cov-report=html
 ```
 
+## 📊 Diagrams
+
+![architecture](https://i.nego.one/projects/onuion/IMG_7087.jpeg)
+
+
 ## 📚 Documentation
 
 See the `docs/` directory for detailed documentation:
