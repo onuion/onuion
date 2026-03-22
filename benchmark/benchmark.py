@@ -1,7 +1,7 @@
 """
 Performance Benchmark Script
 
-Inference süresini ölçer ve performans metriklerini raporlar.
+Measures inference time and reports performance metrics.
 """
 
 import time
@@ -12,7 +12,7 @@ from onuion.inference import InferencePipeline
 
 
 def generate_test_sessions(n: int = 1000) -> List[dict]:
-    """Test için session data'ları üretir."""
+    """Generates session data for testing."""
     sessions = []
     
     for i in range(n):
@@ -79,7 +79,7 @@ def benchmark_single_inference(pipeline: InferencePipeline, n_iterations: int = 
     
     inference_times = []
     
-    print(f"Single inference benchmark başlıyor ({n_iterations} iterasyon)...")
+    print(f"Single inference benchmark starting ({n_iterations} iterations)...")
     
     start_total = time.perf_counter()
     
@@ -90,7 +90,7 @@ def benchmark_single_inference(pipeline: InferencePipeline, n_iterations: int = 
     end_total = time.perf_counter()
     total_time = (end_total - start_total) * 1000  # ms
     
-    # İstatistikler
+    # Statistics
     avg_time = np.mean(inference_times)
     median_time = np.median(inference_times)
     p95_time = np.percentile(inference_times, 95)
@@ -101,16 +101,16 @@ def benchmark_single_inference(pipeline: InferencePipeline, n_iterations: int = 
     throughput = n_iterations / (total_time / 1000)  # requests per second
     
     print("\n" + "=" * 60)
-    print("SINGLE INFERENCE BENCHMARK SONUÇLARI")
+    print("SINGLE INFERENCE BENCHMARK RESULTS")
     print("=" * 60)
-    print(f"Toplam iterasyon: {n_iterations}")
-    print(f"Toplam süre: {total_time:.2f} ms")
-    print(f"Ortalama inference süresi: {avg_time:.3f} ms")
-    print(f"Median inference süresi: {median_time:.3f} ms")
-    print(f"P95 inference süresi: {p95_time:.3f} ms")
-    print(f"P99 inference süresi: {p99_time:.3f} ms")
-    print(f"Min inference süresi: {min_time:.3f} ms")
-    print(f"Max inference süresi: {max_time:.3f} ms")
+    print(f"Total iterations: {n_iterations}")
+    print(f"Total time: {total_time:.2f} ms")
+    print(f"Average inference time: {avg_time:.3f} ms")
+    print(f"Median inference time: {median_time:.3f} ms")
+    print(f"P95 inference time: {p95_time:.3f} ms")
+    print(f"P99 inference time: {p99_time:.3f} ms")
+    print(f"Min inference time: {min_time:.3f} ms")
+    print(f"Max inference time: {max_time:.3f} ms")
     print(f"Throughput: {throughput:.0f} requests/second")
     print("=" * 60)
     
@@ -153,8 +153,8 @@ def benchmark_batch_inference(pipeline: InferencePipeline, batch_sizes: List[int
         }
         
         print(f"\nBatch Size: {batch_size}")
-        print(f"  Toplam süre: {total_time:.2f} ms")
-        print(f"  Öğe başına ortalama: {avg_time_per_item:.3f} ms")
+        print(f"  Total time: {total_time:.2f} ms")
+        print(f"  Average per item: {avg_time_per_item:.3f} ms")
         print(f"  Throughput: {throughput:.0f} requests/second")
     
     return results
@@ -165,7 +165,7 @@ def main():
     print("onuion Performance Benchmark")
     print("=" * 60)
     
-    # Pipeline oluştur
+    # Create pipeline
     pipeline = InferencePipeline()
     
     # Single inference benchmark
@@ -174,7 +174,7 @@ def main():
     # Batch inference benchmark
     batch_results = benchmark_batch_inference(pipeline, batch_sizes=[10, 50, 100, 500])
     
-    # Sonuçları JSON'a kaydet
+    # Save results to JSON
     all_results = {
         "single_inference": single_results,
         "batch_inference": batch_results
@@ -183,7 +183,7 @@ def main():
     with open("benchmark_results.json", "w", encoding="utf-8") as f:
         json.dump(all_results, f, indent=2, ensure_ascii=False)
     
-    print("\nBenchmark sonuçları 'benchmark_results.json' dosyasına kaydedildi.")
+    print("\nBenchmark results saved to 'benchmark_results.json'.")
 
 
 if __name__ == "__main__":

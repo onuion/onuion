@@ -224,7 +224,10 @@ See `examples/huggingface_upload.py` and `examples/huggingface_download.py` for 
 - **P95**: < 1.5ms
 - **Throughput**: ~1,000-2,000 requests/second
 
+
 ### Benchmark
+
+![Benchmark Results](benchmark.gif)
 
 ```bash
 python benchmark/benchmark.py
