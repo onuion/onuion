@@ -22,6 +22,8 @@ wheels/
 test.sh
 # Virtual Environment
 venv/
+venv-tf/
+.python-version
 ENV/
 env/
 

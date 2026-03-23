@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "onuion"
-version = "0.1.0"
+version = "0.1.1"
 description = "Real-time Security Risk Analysis Model - Hybrid (Rule-based + ML) system for session data analysis"
 readme = "README.md"
 requires-python = ">=3.8"
