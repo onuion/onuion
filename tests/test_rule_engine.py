@@ -7,7 +7,7 @@ from onuion.rule_engine import RuleEngine
 
 
 def test_rule_engine_ip_mismatch():
-    """IP mismatch kuralı testi."""
+    """IP mismatch rule test."""
     engine = RuleEngine()
 
     session_data = {
@@ -37,7 +37,7 @@ def test_rule_engine_ip_mismatch():
 
 
 def test_rule_engine_session_hijacking():
-    """Session hijacking kuralı testi."""
+    """Session hijacking rule test."""
     engine = RuleEngine()
 
     session_data = {
@@ -66,10 +66,10 @@ def test_rule_engine_session_hijacking():
 
 
 def test_rule_engine_bot_behavior():
-    """Bot behavior kuralı testi."""
+    """Bot behavior rule test."""
     engine = RuleEngine()
 
-    # Yüksek request rate
+    # High request rate
     requests = [
         {"timestamp": i * 0.01, "method": "GET", "endpoint": f"/api/{i}"} for i in range(100)
     ]
@@ -100,7 +100,7 @@ def test_rule_engine_bot_behavior():
 
 
 def test_rule_engine_no_risk():
-    """Risk yok durumu testi."""
+    """No risk case test."""
     engine = RuleEngine()
 
     session_data = {
@@ -125,6 +125,6 @@ def test_rule_engine_no_risk():
 
     result = engine.evaluate(session_data)
 
-    # Risk skoru düşük olmalı (ama 0 olmayabilir, ML'e bırakılır)
+    # Risk score should be low (but may not be zero, left to ML)
     assert result["risk_score"] >= 0
     assert result["risk_score"] <= 100

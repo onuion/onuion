@@ -7,7 +7,7 @@ from onuion.inference import InferencePipeline, analyze_risk
 
 
 def test_inference_pipeline_basic():
-    """Temel inference testi."""
+    """Basic inference test."""
     pipeline = InferencePipeline()
 
     session_data = {
@@ -39,7 +39,7 @@ def test_inference_pipeline_basic():
 
 
 def test_analyze_risk_function():
-    """Convenience function testi."""
+    """Convenience function test."""
     session_data = {
         "current_ip": "192.168.1.100",
         "initial_ip": "192.168.1.100",

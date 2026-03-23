@@ -8,7 +8,7 @@ from onuion.feature_extractor import FeatureExtractor
 
 
 def test_feature_extractor_basic():
-    """Temel feature extraction testi."""
+    """Basic feature extraction test."""
     extractor = FeatureExtractor()
 
     session_data = {
@@ -41,7 +41,7 @@ def test_feature_extractor_basic():
 
 
 def test_feature_extractor_empty_data():
-    """Boş session data testi."""
+    """Empty session data test."""
     extractor = FeatureExtractor()
 
     session_data = {}

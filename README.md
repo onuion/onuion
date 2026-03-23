@@ -235,6 +235,13 @@ python benchmark/benchmark.py
 
 ## 🧪 Testing
 
+![Risk Test Results](test_RISK.gif)
+
+```bash
+# Run risk test
+python tests/test_analyze_risk_script.py
+```
+
 ```bash
 # Run all tests
 pytest tests/
